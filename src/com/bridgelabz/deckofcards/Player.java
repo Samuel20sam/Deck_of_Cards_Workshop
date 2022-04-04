@@ -24,7 +24,7 @@ public class Player
         {
             System.out.println("Please Enter the " + i + " player name");
             String name = in.next();
-            player[i] = new Name(name, 9);
+            player[i] = new Name(name);
         }
     }
 }
