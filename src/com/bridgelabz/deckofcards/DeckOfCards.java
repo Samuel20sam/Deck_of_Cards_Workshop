@@ -17,7 +17,7 @@ public class DeckOfCards
         }
         String[][] shuffledDeck = shuffle(suit, rank, deck);
         System.out.println(Arrays.deepToString(shuffledDeck));
-        new Player(4, 9, shuffledDeck);
+        new Player(4, 13, shuffledDeck);
     }
 
     private static String[][] shuffle(String[] suit, String[] rank, String[][] deck) {

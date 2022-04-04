@@ -1,5 +1,6 @@
 package com.bridgelabz.deckofcards;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Player
@@ -16,6 +17,7 @@ public class Player
         this.card = card;
         this.deck = deck;
         start();
+        System.out.println(Arrays.deepToString(deck));
     }
 
     public void start() {
