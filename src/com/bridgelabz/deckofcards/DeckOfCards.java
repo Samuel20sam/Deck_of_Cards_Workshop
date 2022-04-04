@@ -1,13 +1,19 @@
 package com.bridgelabz.deckofcards;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class DeckOfCards
 {
+    public static int num;
+
     public static void main(String[] args) {
         String[] suit = {"Clubs", "Diamonds", "Hearts", "Spades"};
         String[] rank = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
         String[][] deck = new String[4][13];
+        System.out.println("Enter no of Players");
+        Scanner in = new Scanner(System.in);
+        num = in.nextInt();
         for (int i = 0; i < suit.length; i++)
         {
             for (int j = 0; j < rank.length; j++)
@@ -26,13 +32,12 @@ public class DeckOfCards
         {
             for (int j = 0; j < rank.length; j++)
             {
-                int random1 = (int) Math.floor(Math.random() * 10) % 4;
+                int random1 = (int) Math.floor(Math.random() * 10) % num;
                 int random2 = (int) Math.floor(Math.random() * 100) % 13;
                 temp[0] = deck[i][j];
                 deck[i][j] = deck[random1][random2];
                 deck[random1][random2] = temp[0];
             }
-
         }
         return deck;
     }
