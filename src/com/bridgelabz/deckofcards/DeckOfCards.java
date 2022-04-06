@@ -12,6 +12,7 @@ public class DeckOfCards extends Players
         for (int i = 0; i < ranks.length; i++) {
             for (int j = 0; j < suits.length; j++) {
                 deck[suits.length * i + j] = ranks[i] + " - " + suits[j];
+
             }
         }
         for (int i = 0; i < n; i++) {
@@ -28,5 +29,6 @@ public class DeckOfCards extends Players
         deckOfCards.shuffle();
         deckOfCards.Player();
         deckOfCards.order();
+
     }
 }
