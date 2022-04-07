@@ -51,10 +51,10 @@ public class DeckOfCards extends Players {
         for (int k = 0; k < player * 9; k++) {
             cardIndex[k] = 52;
         }
-        int i = 0, min = 0, max = 51;
-        while (i < player * 9) {
+        int i = 0;
+        while ( i < player * 9) {
             int condition = 0;
-            int randomIndex = (int) Math.floor(Math.random() * (max - min) + min);
+            int randomIndex = (int) Math.floor(Math.random() * 51);
             for (int index : cardIndex) {
                 if (randomIndex == index) {
                     condition = 1;
