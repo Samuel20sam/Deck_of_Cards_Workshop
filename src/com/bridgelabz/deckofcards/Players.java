@@ -17,9 +17,9 @@ public class Players
             addingPlayer();
         }
         for(int i=0; i < p; i++) {
-            Scanner scan1 = new Scanner(System.in);
-            System.out.println("Enter the player "  + (i+1) +  " name :");
-            String name = scan1.nextLine();
+            Scanner input = new Scanner(System.in);
+            System.out.println("Player "  + (i+1) +  " : Enter the player name");
+            String name = input.nextLine();
             playersName[i] = name;
         }
 
