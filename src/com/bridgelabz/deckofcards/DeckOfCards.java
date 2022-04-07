@@ -6,6 +6,7 @@ public class DeckOfCards extends Players {
     public static String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
     public static String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
     int n = suits.length * ranks.length;
+    int[] freqCount = new int[4];
 
     public String[] deckInitialize()
     {
@@ -60,12 +61,35 @@ public class DeckOfCards extends Players {
         for (int i = 1; i < player.length + 1; i++) {
             System.out.println("Player " + player[i - 1] + " Cards :");
             for (int j = i - 1; j < cardIndex.length; j = j + player.length) {
-                System.out.printf("|| %s    ", deck[j]);
+                System.out.printf("|| %s", deck[j]);
             }
+            System.out.println();
+            int k = 0;
+            for(int count: freqCount) {
+                System.out.print(suits[k]+ ":" + count + "  ");
+                k++;
+            }
+            freqCount = new int[4];
             System.out.println();
         }
     }
-
+    public void freqCounter(String deck) {
+        String[] splitDeck = deck.split(" ");
+        for(String suit: splitDeck) {
+            if(suit.equals("Clubs")) {
+                freqCount[0]++;
+            }
+            if(suit.equals("Diamonds")) {
+                freqCount[1]++;
+            }
+            if(suit.equals("Hearts")) {
+                freqCount[2]++;
+            }
+            if(suit.equals("Spades")) {
+                freqCount[3]++;
+            }
+        }
+    }
     public static void main(String[] args) {
         DeckOfCards deckOfCards = new DeckOfCards();
         deckOfCards.distribution();
